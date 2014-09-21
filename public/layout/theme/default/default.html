@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"><!-- IE 兼容模式 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta charset="UTF-8">
+<meta name="description" content="<?php if(isset($description)) echo $description;?>">
+    <meta name="author" content="">
+<link rel="stylesheet"  type="text/css" href="<?php echo $__base_url__;?>public/assert/common/bootstrap-3.2.0/css/bootstrap.css">
+<link rel="stylesheet"  type="text/css" href="<?php echo $__base_url__;?>public/assert/css/base.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script  src="<?php echo $__base_url__;?>public/assert/common/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	var base_url = "<?php if(isset($__base_url__)) echo $__base_url__;?>";
+</script>
+<title><?php  if(isset($page_title)) echo $page_title;?></title>
+</head>
+<body>
+<div class="container-fluid"><!-- 100% 宽度，占据全部视口（viewport）的容器。 -->
+<!-- nav -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container"> 
+  			<a class="navbar-brand" href="#">72变</a>
+		    <ul class="nav nav-pills" role="tablist">
+		    	<li role="presentation"  <?php  if($_GET['app']=='home'||$_GET['app']==''||empty($_GET['app'])){ echo 'class="active"';}?>>   <a href="<?php echo url('index','index','home');?>"  >首页       </a></li>
+			  	<li role="presentation" <?php  if($_GET['app']=='blog'&&!empty($_GET['app'])){ echo 'class="active"';}?>> <a href="<?php echo url('index','index','blog');?>"  >博客        </a></li>
+			  	<li role="presentation" <?php  if($_GET['app']=='user'&&!empty($_GET['app'])){ echo 'class="active"';}?>> <a href="<?php echo url('index','index','user');?>"  >用户中心</a></li>
+			</ul>
+  </div>
+</nav>
+ <!-- middle content  -->
+<?php if(isset($content)) echo $content?>
+ <!-- footer -->
+<div class="blog-footer">
+      <p>权利所有  <a href="http://tongdianer.com" target="_blank">@痛点网络 </a> Create by <a href="http://weibo.com/bendimei" target="_blank">@本地美官网</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+ </div>
+</div>
+</body>
+</html>

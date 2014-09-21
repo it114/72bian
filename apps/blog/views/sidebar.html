@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading">关于博客</div>
+  <div class="panel-body">
+     <p><?php echo $about_blog;?></p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">热门推荐</div>
+  <div class="panel-body">
+        <ul class="list-unstyled">
+        	  <?php $i=0;if(!empty($hot_article_list))  {foreach($hot_article_list as $v){?>
+              <li><a href="<?php echo url('details','article','blog',array('cateId'=>$v['cateId'], 'id'=>$v['id']));?>"><?php   $i++;echo $i,' ',$v['title'];?></a></li>
+              <?php }}?>
+        </ul>
+  </div>
+</div>
+
+ 
+
+<div class="panel panel-default">
+  <div class="panel-heading">标签</div>
+  <div class="panel-body">
+    <?php  foreach($tag_list as $v){?>
+
+    <a href="<?php echo url('tagarticle','tag','blog',array('tagid'=>$v['id']));?>"	><?php echo $v['tagname'];?></a>
+
+    <?php }?>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">热门评论</div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>

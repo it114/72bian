@@ -1,0 +1,38 @@
+<div class="container" style="margin-top:10px;">
+	<?php echo $nav;?>
+	<div class="row">
+		<!-- .col-md-8 -->
+		<div class="col-md-8">
+			<div class="alert alert-success" role="alert">关于<span class="label label-success"><?php echo $tag['tagname'];?></span>的文章列表</div>
+			<!-- 文章列表 -->
+			<ul class="list-group">
+			  <?php foreach($article_list as $v){ ?>
+			  <li class="list-group-item">
+			  <div class="article-item row">
+			    	<div class="col-md-3">
+			    		 <img  src="<?php echo $v['photo'];?>" class="img-thumbnail" alt="180x120"  style="width: 180px; height: 120px;">
+			    	</div>
+			    	<div class="col-md-9">
+			    		<h4><a href="<?php echo url('details','article','blog',array('cateId'=>$v['cateId'],'id'=>$v['id']));?>" ><?php echo $v['title'];?> </a></h4>
+			    		<p class="list-group-item-text">
+			    			<?php echo $v['summary'];?>
+			    			[<a href="<?php echo url('details','article','blog',array('cateId'=>$v['cateId'],'id'=>$v['id']));?>" >详细 </a>]
+			    		</p>
+			    		<div><a href="<?php echo $v['authorId'];?>"><?php if(isset($v['authorName']))echo $v['authorName'];?></a> <?php echo $v['createTime'];?><span class="pull-right"><?php if(isset($v['tags']))echo $v['tags'];?></span></div>
+			    	</div>
+			  </div>
+			  </li>
+			  <?php } ?>
+			</ul>
+		</div>
+		<!-- end -->
+		
+		
+		<!-- .col-md-4 -->
+  		<div class="col-md-4">
+  			<!-- sidderbar -->
+  			<?php echo $siderbar?>
+  		</div>
+  		<!-- .col-md-end -->
+	</div>
+</div>

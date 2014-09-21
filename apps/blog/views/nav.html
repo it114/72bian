@@ -1,0 +1,11 @@
+<nav class="navbar navbar-default" role="navigation">
+  		<div class="container">
+  			<ul class="nav navbar-nav" role="tablist">
+  				<li  <?php   if($_GET['app']=='blog'&&$_GET['controller']=='index'&&$_GET['action']=='index') {echo 'class="active"';} ?> ><a href="<?php echo url('index','index','blog');?>"> 首页 </a></li>
+  				
+  				<?php foreach($category_list as $v){ ?>
+  				<li  <?php   if(isset($_GET['cateId'])&&$_GET['cateId']==$v['id']){echo 'class="active"';} ?> ><a href="<?php echo url('index','category','blog',array('cateId'=>$v['id']));?>" ><?php echo $v['cateName'];?></a></li>
+				<?php }?>
+  			</ul>
+  		</div>
+</nav>
